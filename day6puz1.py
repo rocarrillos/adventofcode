@@ -6,19 +6,6 @@ with open('day6.csv') as file:
     for row in dataReader:
         orbitsList.append((row[0], row[1]))
 
-testMasses = ['orbit1', 'orbit2', 'orbit3', 'orbit4', 'orbit5', 'orbit6']
-test = {
-    'orbit1': {
-        'orbit2': {
-            'orbit5': {}
-        },
-        'orbit3': {}
-    }, 
-    'orbit4': {
-        'orbit6': {}
-    }
-}
-
 def getPath(item, obj):
     # returns the path of it exists, otherwise None
     if item in obj.keys():
@@ -68,8 +55,5 @@ def chartOrbits():
             pathEnd[orbit[1]] = orbitsDict[orbit[1]]
             del(orbitsDict[orbit[1]])
 
-    
-
 chartOrbits()
-# prettyPrint(orbitsDict['COM'], 0)
 print(sum([len(getPath(mass, orbitsDict)) - 1 for mass in knownMasses]))
