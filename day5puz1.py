@@ -1,11 +1,7 @@
-import csv
+from csvToList import readToList
 
 dataList = []
-with open('day5.csv') as file:
-    dataReader = csv.reader(file, delimiter=',')
-    for row in dataReader:
-        for item in row:
-            dataList.append(item)
+readToList('day5.csv', dataList)
 
 def handleOpcode(opCode, input1, input2, output, program): 
     if opCode == '1' or opCode == '01':

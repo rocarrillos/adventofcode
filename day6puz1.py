@@ -1,10 +1,4 @@
-import csv
-
-orbitsList = list()
-with open('day6.csv') as file:
-    dataReader = csv.reader(file, delimiter=',')
-    for row in dataReader:
-        orbitsList.append((row[0], row[1]))
+from csvToList import readToTupleList
 
 def getPath(item, obj):
     # returns the path of it exists, otherwise None
@@ -27,9 +21,7 @@ def prettyPrint(obj, numTabs):
             prettyPrint(obj[key], numTabs + 1)
             print('..' * numTabs + '}')
 
-knownMasses = set()
-orbitsDict = dict()
-def chartOrbits():
+def chartOrbits(knownMasses, orbitsDict, orbitsList):
     for orbit in orbitsList:
         knownMasses.add(orbit[0])
         knownMasses.add(orbit[1])
@@ -55,5 +47,10 @@ def chartOrbits():
             pathEnd[orbit[1]] = orbitsDict[orbit[1]]
             del(orbitsDict[orbit[1]])
 
-chartOrbits()
-print(sum([len(getPath(mass, orbitsDict)) - 1 for mass in knownMasses]))
+def execute1():
+    orbitsList = list()
+    readToTupleList('day6.csv', orbitsList)
+    knownMasses = set()
+    orbitsDict = dict()
+    chartOrbits(knownMasses, orbitsDict, orbitsList)
+    print(sum([len(getPath(mass, orbitsDict)) - 1 for mass in knownMasses]))
