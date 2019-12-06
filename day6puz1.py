@@ -71,5 +71,5 @@ def chartOrbits():
     
 
 chartOrbits()
-prettyPrint(orbitsDict['COM'], 0)
+# prettyPrint(orbitsDict['COM'], 0)
 print(sum([len(getPath(mass, orbitsDict)) - 1 for mass in knownMasses]))
