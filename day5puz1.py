@@ -43,12 +43,10 @@ def parseIndex(idx, program):
         outputLocation = int(program[idx + 3]) if mode1 == '0' else idx + 3
         return handleOpcode(operation, inputLocation1, inputLocation2, outputLocation, program)
 
-def execute():
+def execute1():
     i = 0
     while i < len(dataList):
         delta = parseIndex(i, dataList)
         if delta == 0:
             break
         i += delta
-
-execute()

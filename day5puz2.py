@@ -61,7 +61,7 @@ def parseIndex(pointer, program):
         outputLocation = int(program[pointer + 3]) if mode1 == '0' else pointer + 3
         return handleOpcode(pointer, operation, inputLocation1, inputLocation2, outputLocation, program)
 
-def execute():
+def execute2():
     pointer = 0
     while pointer < len(dataList):
         try:
@@ -70,5 +70,3 @@ def execute():
                 break
         except IndexError:
             break
-
-execute()
