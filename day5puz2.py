@@ -6,17 +6,7 @@ class IntcodeComputer:
         self.inputs = []
         self.program = []
         self.currentInput = 0
-        self.pointer = 0
-
-    def set_inputs_and_program(self, inputs, program):
-        """
-        Set program inputs and the program to run. 
-        Parameters:
-            inputs (list(str)): inputs in the order they will be used
-            program (list(str)): program to execute
-        """
-        self.inputs = inputs[:]
-        self.program = program[:]
+        self.pointer = 0  
 
     def handle_opcode(self, opcode, input1, input2, output):
         """
@@ -87,10 +77,16 @@ class IntcodeComputer:
             output = int(self.program[self.pointer + 3]) if mode1 == '0' else self.pointer + 3
             return self.handle_opcode(operation, input1, input2, output)
 
-    def run_program(self):
+    def run_program(self, inputs, program):
         """
         Run the given program with the given inputs.
+
+        Params:
+        inputs: (list(str)): input values in the order they are to be used
+        program: (list(str)): program to run
         """
+        self.inputs = inputs[:]
+        self.program = program[:]
         if len(self.program) == 0:
             print('Program is empty!')
         else:
@@ -100,8 +96,7 @@ class IntcodeComputer:
                     break
 
 def execute2():
-    intcodeComputer = IntcodeComputer()
-    dataList = []
-    csv_to_list('day5.csv', dataList)
-    intcodeComputer.set_inputs_and_program(['5'], dataList)
-    intcodeComputer.run_program()
+    intcode_computer = IntcodeComputer()
+    program = []
+    csv_to_list('day5.csv', program)
+    intcode_computer.run_program(['5'], program)
