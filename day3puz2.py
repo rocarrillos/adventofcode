@@ -1,10 +1,10 @@
-from csvToList import readToNestedList
+from csvtolist import csv_to_nested_list
 from day3puz1 import updateBoard, processWire
 dataList = []
 radius = 10000
 
 dataList = []
-readToNestedList('day3.csv', dataList)
+csv_to_nested_list('day3.csv', dataList)
 
 mapArray = []
 mapRow = ['.'] * 2 * radius

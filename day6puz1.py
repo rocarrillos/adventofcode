@@ -1,4 +1,4 @@
-from csvToList import readToTupleList
+from csvtolist import csv_to_tuple_list
 
 def getPath(item, obj):
     # returns the path of it exists, otherwise None
@@ -49,7 +49,7 @@ def chartOrbits(knownMasses, orbitsDict, orbitsList):
 
 def execute1():
     orbitsList = list()
-    readToTupleList('day6.csv', orbitsList)
+    csv_to_tuple_list('day6.csv', orbitsList)
     knownMasses = set()
     orbitsDict = dict()
     chartOrbits(knownMasses, orbitsDict, orbitsList)

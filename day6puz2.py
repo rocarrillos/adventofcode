@@ -1,9 +1,9 @@
-from csvToList import readToTupleList
+from csvtolist import csv_to_tuple_list
 from day6puz1 import getPath, chartOrbits
 
 def execute2():
     orbitsList = list()
-    readToTupleList('day6.csv', orbitsList)
+    csv_to_tuple_list('day6.csv', orbitsList)
     knownMasses = set()
     orbitsDict = dict()
 

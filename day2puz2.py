@@ -1,8 +1,8 @@
-from csvToList import readToList
+from csvtolist import csv_to_list
 from day2puz1 import processOpcode
 
 dataList = []
-readToList('day2.csv', dataList)
+csv_to_list('day2.csv', dataList)
 
 def execute(valueArray):
     position = 0

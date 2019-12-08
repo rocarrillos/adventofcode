@@ -1,7 +1,7 @@
-from csvToList import readToList
+from csvtolist import csv_to_list
 
 dataList = []
-readToList('day1.csv', dataList)
+csv_to_list('day1.csv', dataList)
 
 # we're gonna recurse this boi
 def fuelCounter(amount, fuelList):

@@ -1,7 +1,7 @@
-from csvToList import readToList
+from csvtolist import csv_to_list
 
 dataList = []
-readToList('day2.csv', dataList)
+csv_to_list('day2.csv', dataList)
 
 def processOpcode(position, valueArray):
     inputLocation1 = int(valueArray[position + 1])

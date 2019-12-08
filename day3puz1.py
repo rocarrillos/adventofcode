@@ -1,4 +1,4 @@
-from csvToList import readToNestedList
+from csvtolist import csv_to_nested_list
 
 def updateBoard(circuit, position, number):
     if circuit[position[0]][position[1]] != '.' and circuit[position[0]][position[1]] != number:
@@ -42,7 +42,7 @@ def findMinDistance(radius, mapArray):
 
 def execute():
     dataList = []
-    readToNestedList('day3.csv', dataList)
+    csv_to_nested_list('day3.csv', dataList)
 
     radius = 10000
     mapArray = []
