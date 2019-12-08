@@ -1,4 +1,4 @@
-from csvToList import readToList
+from csvtolist import csv_to_list
 
 class IntcodeComputer:
     def __init__(self):
@@ -102,6 +102,6 @@ class IntcodeComputer:
 def execute2():
     intcodeComputer = IntcodeComputer()
     dataList = []
-    readToList('day5.csv', dataList)
+    csv_to_list('day5.csv', dataList)
     intcodeComputer.set_inputs_and_program(['5'], dataList)
     intcodeComputer.run_program()
